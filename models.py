@@ -41,6 +41,16 @@ class Member(Person):
             f"Membership: {self.membership_type}, "
             f"Borrowed books: {self.borrowed_books}"
         )
+    def __str__(self):
+        return f"{self.name} (Member ID: {self.member_id})"
+
+    def __repr__(self):
+        return (
+            f"Member(name='{self.name}', "
+            f"age={self.age}, "
+            f"member_id='{self.member_id}', "
+            f"membership_type='{self.membership_type}')"
+        )
 
 class Librarian(Person):
     def __init__(self, name, age, member_id, employee_id):
