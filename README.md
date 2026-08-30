@@ -4,7 +4,7 @@ A FastAPI + Streamlit app to manage library members and their borrowed books, bu
 In progress — Day 2/5 complete: magic methods + persistence.
 ## Tech stack
 Python 3, FastAPI, Streamlit
-## Features (growing daily)
+## Features 
 - [x] Person base class, Member/Librarian subclasses with polymorphic describe().
 - [x] __str__/__repr__/__eq__/__lt__ on Member; sortable member lists.
 - [x] Library.__add__ merges two libraries (operator overloading).
