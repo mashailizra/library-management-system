@@ -1,20 +1,30 @@
 [
     {
+        "name": "Izra",
+        "age": 23,
+        "member_id": "M010",
+        "membership_type": "Premium",
+        "borrowed_books": []
+    },
+    {
         "name": "Rahul",
         "age": 25,
         "member_id": "M001",
         "membership_type": "Premium",
-        "borrowed_books": [
-            "Clean Code"
-        ]
+        "borrowed_books": ["Clean Code"]
     },
     {
         "name": "Anu",
         "age": 22,
         "member_id": "M002",
         "membership_type": "Basic",
-        "borrowed_books": [
-            "Python Crash Course"
-        ]
+        "borrowed_books": ["Python Crash Course"]
+    },
+    {
+        "name": "Neha",
+        "age": 24,
+        "member_id": "M003",
+        "membership_type": "Basic",
+        "borrowed_books": []
     }
 ]
