@@ -11,5 +11,4 @@ Python 3, FastAPI, Streamlit
 - [x] Custom DuplicateMemberError / MemberNotFoundError.
 - [x] Members persist to members.json .
 - [x] Full CRUD API: POST/GET/PUT/DELETE /members.
-- [x] Custom exceptions mapped to proper HTTP status codes 
-(404/409).
+- [x] Custom exceptions mapped to proper HTTP status codes(404/409).
