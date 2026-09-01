@@ -45,6 +45,10 @@ class Member(Person):
     def borrowed_books(self):
         return self._borrowed_books
 
+    @borrowed_books.setter
+    def borrowed_books(self, books):
+        self._borrowed_books = books
+
     def describe(self):
         return (
             f"Member: {self.name}, "
