@@ -1,16 +1,9 @@
 [
     {
-        "name": "Izra",
-        "age": 23,
-        "member_id": "M010",
-        "membership_type": "Premium",
-        "borrowed_books": []
-    },
-    {
-        "name": "Rahul",
-        "age": 25,
+        "name": "Ajmal",
+        "age": 27,
         "member_id": "M001",
-        "membership_type": "Premium",
+        "membership_type": "Basic",
         "borrowed_books": [
             "Clean Code"
         ]
@@ -35,6 +28,13 @@
         "name": "Priya",
         "age": 26,
         "member_id": "M004",
+        "membership_type": "Premium",
+        "borrowed_books": []
+    },
+    {
+        "name": "Nedha",
+        "age": 20,
+        "member_id": "M020",
         "membership_type": "Premium",
         "borrowed_books": []
     }
