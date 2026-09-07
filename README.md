@@ -13,5 +13,4 @@ Python 3, FastAPI, Streamlit
 - [x] Members persist to members.json .
 - [x] Full CRUD API: POST/GET/PUT/DELETE /members.
 - [x] Custom exceptions mapped to proper HTTP status codes(404/409).
-- [x] Streamlit dashboard: add/search/sort/update/delete members 
-via the UI
+- [x] Streamlit dashboard: add/search/sort/update/delete members via the UI.
