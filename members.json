@@ -37,5 +37,12 @@
         "member_id": "M020",
         "membership_type": "Premium",
         "borrowed_books": []
+    },
+    {
+        "name": "Susan",
+        "age": 26,
+        "member_id": "M500",
+        "membership_type": "Basic",
+        "borrowed_books": []
     }
 ]

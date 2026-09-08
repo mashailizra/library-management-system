@@ -50,35 +50,47 @@ with st.form("add_member_form"):
     submitted = st.form_submit_button("Add Member")
 
     if submitted:
-        member_data = {
-            "name": name,
-            "age": age,
-            "member_id": member_id,
-            "membership_type": membership_type
-        }
 
-        try:
-            response = requests.post(
-                f"{API_URL}/members",
-                json=member_data
-            )
+        # Validate input before calling the API
+        if not name.strip():
+            st.error("Name cannot be empty.")
 
-            if response.status_code == 200:
-                st.success("Member added successfully!")
+        elif not member_id.strip():
+            st.error("Member ID cannot be empty.")
 
-            elif response.status_code == 409:
-                st.error(response.json()["detail"])
+        elif age <= 0:
+            st.error("Age must be positive.")
 
-            else:
-                st.error(
-                    f"API returned an error: {response.status_code}"
+        else:
+            member_data = {
+                "name": name.strip(),
+                "age": age,
+                "member_id": member_id.strip(),
+                "membership_type": membership_type
+            }
+
+            try:
+                response = requests.post(
+                    f"{API_URL}/members",
+                    json=member_data
                 )
 
-        except requests.exceptions.RequestException:
-            st.error(
-                "Could not connect to the FastAPI backend. "
-                "Make sure the FastAPI server is running on port 8000."
-            )
+                if response.status_code == 200:
+                    st.success("Member added successfully!")
+
+                elif response.status_code == 409:
+                    st.error(response.json()["detail"])
+
+                else:
+                    st.error(
+                        f"API returned an error: {response.status_code}"
+                    )
+
+            except requests.exceptions.RequestException:
+                st.error(
+                    "Could not connect to the FastAPI backend. "
+                    "Make sure the FastAPI server is running on port 8000."
+                )
 
 
 # --------------------------------------------------
@@ -252,7 +264,7 @@ with st.form("update_member_form"):
 
     new_age = st.number_input(
         "New Age",
-        min_value=1,
+        min_value=0,
         max_value=120,
         value=18
     )
@@ -267,34 +279,43 @@ with st.form("update_member_form"):
     )
 
     if update_submitted:
-        update_data = {
-            "name": new_name,
-            "age": new_age,
-            "membership_type": new_membership_type
-        }
 
-        try:
-            response = requests.put(
-                f"{API_URL}/members/{update_id}",
-                json=update_data
-            )
+        # Validate input before calling the API
+        if not new_name.strip():
+            st.error("Name cannot be empty.")
 
-            if response.status_code == 200:
-                st.success(
-                    "Member updated successfully!"
+        elif new_age <= 0:
+            st.error("Age must be positive.")
+
+        else:
+            update_data = {
+                "name": new_name.strip(),
+                "age": new_age,
+                "membership_type": new_membership_type
+            }
+
+            try:
+                response = requests.put(
+                    f"{API_URL}/members/{update_id}",
+                    json=update_data
                 )
-                st.rerun()
-                
-            elif response.status_code == 404:
-                st.error(response.json()["detail"])
 
-            else:
+                if response.status_code == 200:
+                    st.success(
+                        "Member updated successfully!"
+                    )
+                    st.rerun()
+
+                elif response.status_code == 404:
+                    st.error(response.json()["detail"])
+
+                else:
+                    st.error(
+                        f"API returned an error: {response.status_code}"
+                    )
+
+            except requests.exceptions.RequestException:
                 st.error(
-                    f"API returned an error: {response.status_code}"
+                    "Could not connect to the FastAPI backend. "
+                    "Make sure the FastAPI server is running on port 8000."
                 )
-
-        except requests.exceptions.RequestException:
-            st.error(
-                "Could not connect to the FastAPI backend. "
-                "Make sure the FastAPI server is running on port 8000."
-            )
