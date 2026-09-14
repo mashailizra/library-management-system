@@ -17,9 +17,10 @@ lists
 ## Tech stack
 Python 3, FastAPI, Streamlit, Pandas, Requests
 ## Screenshots
-![Dashboard](screenshots/streamlit_library-management -system1.png)
-(screenshots/streamlit_library-management -system2.png)
-(screenshots/streamlit_library-management -system3.png)
+
+![Add Member](screenshots/add_member.png)
+![Member List](screenshots/member_list.png)
+![Member Update](screenshots/member_update.png)
 ## How to run
 **Terminal 1:**
 ```bash
